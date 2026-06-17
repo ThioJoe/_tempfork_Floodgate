@@ -43,6 +43,12 @@ jobs:
         with:
           cache-read-only: ${{ github.ref_name != 'master' && github.ref_name != 'development' }}
         
+      - name: Build Custom Cloud Fix
+        run: |
+          git clone https://github.com/ThioJoe/_tempfork_cloud-minecraft.git
+          cd cloud-minecraft
+          ./gradlew publishToMavenLocal
+          cd ..
       - name: Build Floodgate
         run: ./gradlew build
         env:
