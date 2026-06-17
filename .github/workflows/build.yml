@@ -45,7 +45,7 @@ jobs:
         
       - name: Build Custom Cloud Fix
         run: |
-          git clone https://github.com/ThioJoe/_tempfork_cloud-minecraft.git
+          git clone https://github.com/ThioJoe/cloud-minecraft.git
           cd cloud-minecraft
           ./gradlew publishToMavenLocal
           cd ..
