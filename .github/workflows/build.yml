@@ -49,6 +49,11 @@ jobs:
           cd cloud-minecraft
           ./gradlew publishToMavenLocal
           cd ..
+      - name: Set up JDK 17 (For Floodgate)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17' 
+          distribution: 'temurin'
       - name: Build Floodgate
         run: ./gradlew build
         env:
